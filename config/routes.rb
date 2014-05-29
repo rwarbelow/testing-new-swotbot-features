@@ -1,4 +1,13 @@
 JqueryAndRailsStuff::Application.routes.draw do
+
+  resources :action_types
+
+  resources :students
+
+  resources :student_actions
+
+  get '/classroom', to: 'classroom#index'
+  post '/classroom/update', to: 'classroom#update'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

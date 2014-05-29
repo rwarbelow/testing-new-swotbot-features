@@ -1,0 +1,18 @@
+<%= form_tag('/classroom/update', method: 'post', remote: true) do %>
+<div class="student-container">
+	<% @students.each do |s| %>
+		<div class="box" id="<%= s.id %>">
+			<%= s.name.capitalize %>
+			<%= number_field_tag "student_ids[]", nil, class: 'omg' %>
+		</div>
+	<% end %>
+	</div>
+	<% ActionType.all.each do |a| %>
+		<div class="action-submit-buttons">
+			<%= submit_tag a.name %>
+		</div>
+	<% end %>
+<% end %>
+
+
+<div class="message"></div>

@@ -1,0 +1,49 @@
+.box {
+	height: 80px;
+	width: 80px;
+	background-color: red;
+	margin: 20px;
+	float: left;
+	border-radius: 10px;
+	text-align: center;
+	font-size:10px;
+}
+
+input[type="number"] {
+	display: none;
+}
+
+.message {
+	padding: 30px;
+	text-align: center;
+	color: white;
+	font-size: 30px;
+	height: 50px;
+	clear:both;
+}
+
+.selected {
+	background-color: orange;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+input[type="submit"] {
+	margin-bottom: 10px;
+	width: 80%;
+	float: right;
+	background:navy;
+	color: white;
+	height:50px;
+	font-size:15px;
+}
+
+.student-container {
+	width: 80%;
+	float: left;
+}
+
+.action-submit-buttons {
+	width: 20%;
+	float: left;
+}

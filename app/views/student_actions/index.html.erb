@@ -1,6 +1,6 @@
-<h1>Listing student_actions</h1>
-
-<table>
+<h1>Student Actions</h1>
+<%= link_to "Back to live class", classroom_path %>
+<table class="table">
   <thead>
     <tr>
       <th>Date</th>
@@ -18,11 +18,10 @@
         <td><%= student_action.created_at.strftime('%m/%e/%y') %></td>
         <td><%= student_action.action_type.name %></td>
         <td><%= student_action.student.name %></td>
+        <td><%= link_to "Delete", student_action_path(student_action), method: 'delete' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Student action', new_student_action_path %>

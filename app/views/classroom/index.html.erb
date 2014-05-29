@@ -1,3 +1,4 @@
+<%= link_to "See student actions", student_actions_path %>
 <%= form_tag('/classroom/update', method: 'post', remote: true) do %>
 <div class="student-container">
 	<% @students.each do |s| %>

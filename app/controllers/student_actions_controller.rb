@@ -4,7 +4,7 @@ class StudentActionsController < ApplicationController
   # GET /student_actions
   # GET /student_actions.json
   def index
-    @student_actions = StudentAction.all
+    @student_actions = StudentAction.all.sort! { |a, b| b.created_at <=> a.created_at }
   end
 
   # GET /student_actions/1

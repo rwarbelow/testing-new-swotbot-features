@@ -12,4 +12,10 @@ $(document).ready(function(){
 		}
 	});
 
+	$("input[type=submit]").click(function(){
+		$('#fade').css('display', 'block')
+		$('#overlay').css('display', 'block').html("<p class='append-message'>Loading...<p>").show()
+	});
+
+
 });

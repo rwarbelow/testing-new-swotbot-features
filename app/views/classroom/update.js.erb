@@ -1,6 +1,4 @@
 $('.selected').removeClass('selected')
-// $('.message').html("<%= @message %>").css("background-color", "blue").show().fadeOut(1000)
 $("input[type=number]").attr('value', "")
-
-$('#overlay').css('display', 'block').html("<p class='append-message'><%= @message %><p>").show().fadeOut(1400)
-$('#fade').css('display', 'block').fadeOut(1400)
+$('#overlay').html("<p class='append-message'><%= @message %><p>").show().fadeOut(1400)
+$('#fade').fadeOut(1400)

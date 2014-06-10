@@ -8,13 +8,13 @@ JqueryAndRailsStuff::Application.routes.draw do
 
   get '/classroom', to: 'classroom#index'
   post '/classroom/update', to: 'classroom#update'
-
+  get '/update-messages', to: 'dashboard#messages'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'classroom#index'
+  root 'dashboard#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,21 +1,17 @@
 <%= link_to "See student actions", student_actions_path %>
-<%= form_tag('/classroom/update', method: 'post', remote: true) do %>
 <div class="student-container">
+	<div class="message"></div>
 	<% @students.each do |s| %>
-	<div class="box" id="<%= s.id %>">
+	<div class="box student" data-student-id="<%= s.id %>">
 		<%= s.name.capitalize %>
-		<%= number_field_tag "student_ids[]", nil %>
 	</div>
 	<% end %>
 </div>
 <div class="action-submit-buttons">
 	<% ActionType.all.each do |a| %>
-	<%= submit_tag a.name %>
+		<button class="submit" data-action-type="<%= a.name %>"><%= a.name %></button>
 	<% end %>
 </div>
 
-<% end %>
 <div id="overlay"></div>
 <div id="fade"></div>
-
-<div class="message"></div>

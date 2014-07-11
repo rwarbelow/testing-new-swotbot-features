@@ -1,21 +1,33 @@
 $(document).ready(function(){
-	$('input[type=checkbox]').hide();
-	$('.box').click(function(){
-		if($(this).hasClass('selected')){
-			$(this).removeClass('selected')
-			student = $(this).attr('id')
-			$(this).find("input").attr('value', "");
-		} else {
-			$(this).addClass('selected')
-			student = $(this).attr('id')
-			$(this).find("input").attr('value', student);
-		}
+	// $('input[type=checkbox]').hide();
+	$('.student').click(function(){
+		$(this).toggleClass('selected');
 	});
 
-	$("input[type=submit]").click(function(){
-		$('#fade').css('display', 'block')
-		$('#overlay').css('display', 'block').html("<p class='append-message'>Loading...<p>").show()
+	$('.submit').click(function () {
+
+		var students = $.makeArray($('.student.selected').map(function(index, student) {
+			return this.dataset.studentId;
+		}));
+
+		var data = {
+			students: students,
+			actionType: this.dataset.actionType
+		};
+
+		$.ajax({
+  		type: "POST",
+  		url: '/classroom/update',
+  		data: data,
+  		success: displaySuccessfulResponse,
+  		dataType: 'json'
+		});
 	});
 
+	var displaySuccessfulResponse = function (response) {
+		var numberOfStudents = response.studentIds.length;
+		var message = numberOfStudents + ' students were reported ' + response.actionType + '.'
+		$('.message').text(message);
+	}
 
 });

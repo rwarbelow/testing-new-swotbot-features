@@ -3,7 +3,6 @@ class ClassroomController < ApplicationController
 
 	def index
 		@students = Student.all
-		p @students
 	end
 
 	def update

@@ -4,7 +4,7 @@
 	<% @students.each do |s| %>
 	<div class="box" id="<%= s.id %>">
 		<%= s.name.capitalize %>
-		<%= number_field_tag "student_ids[]", nil, class: 'omg' %>
+		<%= number_field_tag "student_ids[]", nil %>
 	</div>
 	<% end %>
 </div>

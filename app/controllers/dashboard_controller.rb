@@ -3,7 +3,7 @@ class DashboardController < ApplicationController
 	end
 
 	def messages
-		@actions = StudentAction.all.sort! { |a, b| b.created_at <=> a.created_at }
+		@student_actions = StudentAction.order(:created_at).reverse_order.limit(50)
 		respond_to do |format|
 			format.js
 		end
